@@ -1,11 +1,12 @@
 import random
 
+
 def iniciar():
     print("*********************************")
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
 
-    numero_secreto = random.randrange(1, 101) #Gera valores randomicos entre 1 e 101
+    numero_secreto = random.randrange(1, 101)  # Gera valores randomicos entre 1 e 101
     total_de_tentativas = 0
     pontos = 1000
 
@@ -20,7 +21,7 @@ def iniciar():
     else:
         total_de_tentativas = 5
 
-    for rodada in range(1, total_de_tentativas+1):
+    for rodada in range(1, total_de_tentativas + 1):
         print("Tentativa {} de {}".format(rodada, total_de_tentativas))
 
         chute_str = input("Digite um número entre 1 e 100: ")
@@ -49,3 +50,7 @@ def iniciar():
 
     print("O número secreto é", numero_secreto)
     print("Fim do jogo")
+
+
+if __name__ == "__main__":
+    iniciar()
