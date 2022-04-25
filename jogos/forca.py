@@ -136,10 +136,10 @@ def inicializa_letras_acertadas(palavra):
     return ["_" for letra in palavra]  # Add um caracter a cada letra da palavra
 
 
-def sorteia_palavra(documento: str):
+def sorteia_palavra(nome_arquivo="palavras.txt"):
     palavras = []
 
-    with open(documento) as arquivo:
+    with open(nome_arquivo) as arquivo:
         for linha in arquivo:
             palavras.append(linha.strip().upper())
 
