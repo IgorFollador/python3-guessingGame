@@ -1,10 +1,21 @@
+import random
+
 def iniciar():
     print("*********************************")
     print("Bem vindo ao jogo da Forca!")
     print("*********************************")
 
-    palavra_secreta = "banana".upper()
-    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip().upper()
+        palavras.append(linha)
+    arquivo.close()
+
+    index = random.randrange(0, len(palavras)) #Sorteia o número referente ao local da palavra no array
+    palavra_secreta = palavras[index].upper() #Seleciona a palavra sorteada e realiza a conversão da mesma para caixa alta
+    letras_acertadas = ["_" for letra in palavra_secreta] #Add um caracter a cada letra da palavra
 
     enforcou = False
     acertou = False
